@@ -2,10 +2,8 @@ import Head from 'next/head'
 import styles from './gallery.module.css'
 import Link from 'next/link'
 import { ApolloClient, InMemoryCache, gql, useMutation } from '@apollo/client'
-import { createUploadLink } from 'apollo-upload-client'
-import Button from '../components/button'
 import ImageFrame from '../components/image-frame'
-import { ChangeEvent, ChangeEventHandler, ReactElement } from 'react'
+import { ChangeEvent, ReactElement } from 'react'
 import Layout from '../components/layout'
 
 const SINGLE_UPLOAD_MUTATION = gql`
@@ -17,22 +15,12 @@ const SINGLE_UPLOAD_MUTATION = gql`
 `
 
 export default function Gallery({ images }) {
-  console.log(images)
-  const apolloClient = new ApolloClient({
-    link: createUploadLink({ uri: 'http://localhost:3001/graphql' }),
-    cache: new InMemoryCache(),
-  })
-
-  const [uploadFileMutation] = useMutation(SINGLE_UPLOAD_MUTATION, {
-    client: apolloClient,
-  })
+  const [uploadFileMutation] = useMutation(SINGLE_UPLOAD_MUTATION)
 
   const handleFileChange = ({
     target: { files },
   }: ChangeEvent<HTMLInputElement>) => {
-    uploadFileMutation({ variables: { file: files[0] } }).then(() => {
-      apolloClient.resetStore()
-    })
+    uploadFileMutation({ variables: { file: files[0] } })
   }
 
   return (
