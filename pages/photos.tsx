@@ -21,12 +21,18 @@ type PhotoPageT = {
 
 function PhotosPage({ data }: PhotoPageT) {
   const { photos } = data
+  console.log(photos)
   return (
     <div>
       <h1>Photos</h1>
       <PhotoGrid>
         {photos.map(({ id, caption, image }) => (
-          <Photo key={id} url={image.image.publicUrl} />
+          <Photo
+            key={id}
+            url={image.image.publicUrl}
+            altText={image.altText}
+            id={id}
+          />
         ))}
       </PhotoGrid>
     </div>

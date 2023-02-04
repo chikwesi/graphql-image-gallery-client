@@ -6,6 +6,7 @@ export const ALL_PHOTOS_QUERY = gql`
       	id
         caption
         image{
+          altText
           image{
             publicUrl
           }

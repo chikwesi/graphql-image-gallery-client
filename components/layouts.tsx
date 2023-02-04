@@ -24,7 +24,7 @@ export const Layout = ({ children }) => {
 }
 
 const Wrapper = styled.div`
-  width: 1000px;
+  max-width: 1000px;
   margin: auto;
   padding: 1rem 0;
 `

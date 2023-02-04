@@ -29,7 +29,8 @@ export const NavLink = ({ url, label }: NavItemProps) => {
 }
 
 const Wrapper = styled.div`
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid black;
   ul {
     display: flex;
     list-style: none;
