@@ -7,5 +7,4 @@ export const Button = styled.button`
     outline: none;
     border-radius: .2em;
     border: 1px solid red;
-    margin: 0 1em;
 `

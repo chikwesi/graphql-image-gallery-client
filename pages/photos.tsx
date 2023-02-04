@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import { Layout } from '../components/layouts'
-import { Photo, PhotoGrid } from '../components/PhotosLayout'
+import { Layout } from '../components/layouts/layouts'
+import { Photo, PhotoGrid } from '../components/layouts/PhotosLayout'
 import { ALL_PHOTOS_QUERY, Photos } from '../components/Photos'
 import { addApolloState, initializeApollo } from '../lib/apolloClient'
 
@@ -21,7 +21,6 @@ type PhotoPageT = {
 
 function PhotosPage({ data }: PhotoPageT) {
   const { photos } = data
-  console.log(photos)
   return (
     <div>
       <h1>Photos</h1>

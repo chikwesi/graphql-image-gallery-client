@@ -7,7 +7,7 @@ export const PhotoGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.5rem;
 `
-
+//Todo: Add Option to view alt text like twitter
 export const Photo = ({ url, altText, id }) => {
   return (
     <div>
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   position: relative;
   padding-bottom: 100%;
   overflow: hidden;
-  
+
   div {
     position: absolute;
     display: none;

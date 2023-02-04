@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import styled from 'styled-components'
-import { Nav, NavItemProps } from './nav'
+import { Nav, NavItemProps } from '../Nav'
 
 const urlLinks: NavItemProps[] = [
   {
@@ -11,6 +10,11 @@ const urlLinks: NavItemProps[] = [
   {
     url: '/photos',
     label: 'Photos',
+  },
+
+  {
+    url: '/upload',
+    label: 'Upload',
   },
 ]
 
