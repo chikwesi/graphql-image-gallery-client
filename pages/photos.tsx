@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
-import Layout from '../components/layout'
+import { Layout } from '../components/layouts'
+import { Photo, PhotoGrid } from '../components/PhotosLayout'
 import { ALL_PHOTOS_QUERY, Photos } from '../components/Photos'
 import { addApolloState, initializeApollo } from '../lib/apolloClient'
 
@@ -22,10 +23,12 @@ function PhotosPage({ data }: PhotoPageT) {
   const { photos } = data
   return (
     <div>
-      <div>photos</div>
-      {photos.map(({ id, caption, image }) => (
-        <img key={id} src={image.image.publicUrl} />
-      ))}
+      <h1>Photos</h1>
+      <PhotoGrid>
+        {photos.map(({ id, caption, image }) => (
+          <Photo key={id} url={image.image.publicUrl} />
+        ))}
+      </PhotoGrid>
     </div>
   )
 }

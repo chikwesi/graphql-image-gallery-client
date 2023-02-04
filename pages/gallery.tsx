@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ApolloClient, InMemoryCache, gql, useMutation } from '@apollo/client'
 import ImageFrame from '../components/image-frame'
 import { ChangeEvent, ReactElement } from 'react'
-import Layout from '../components/layout'
+import { Layout} from '../components/layouts'
 
 const SINGLE_UPLOAD_MUTATION = gql`
   mutation singleUpload($file: Upload!) {
